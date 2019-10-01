@@ -83,5 +83,29 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./assets/javascript/app.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+  
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+  
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: `AIzaSyBG8d8Be15vBv161owJAgJq3ifRoEPADzI`,
+      authDomain: `traintime-a76fc.firebaseapp.com`,
+      databaseURL: `https://traintime-a76fc.firebaseio.com`,
+      projectId: `traintime-a76fc`,
+      storageBucket: ``,
+      messagingSenderId: `574202965552`,
+      appId: `1:574202965552:web:649cda1839d3d13fb0c7f5`,
+      measurementId: `G-QNZQ2WNHW2`
+    }
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig)
+    firebase.analytics()
+  </script>
 </body>
 </html>
