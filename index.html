@@ -49,12 +49,12 @@
       <form class="col s12">
         <div class="row">
           <div class="input-field col s6">
-            <input id="trainName" type="text" class="validate">
-            <label for="trainname">Train Name</label>
+            <input id="train" type="text" class="validate">
+            <label for="train">Train Name</label>
           </div>
           <div class="input-field col s6">
-            <input id="destination" type="text" class="validate">
-            <label for="destination">Destination</label>
+            <input id="dest" type="text" class="validate">
+            <label for="dest">Destination</label>
           </div>
         </div>
         <div class="row">
@@ -69,7 +69,7 @@
         </div>
         <div class="row">
           <div class="col s12 center-align">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <button class="btn waves-effect waves-light" type="submit" name="action" id="submitBtn">Submit
               <i class="material-icons right">send</i>
             </button>
           </div>
@@ -82,30 +82,29 @@
   
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="./assets/javascript/app.js"></script>
+  
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
-  
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
-  
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: `AIzaSyBG8d8Be15vBv161owJAgJq3ifRoEPADzI`,
-      authDomain: `traintime-a76fc.firebaseapp.com`,
-      databaseURL: `https://traintime-a76fc.firebaseio.com`,
-      projectId: `traintime-a76fc`,
-      storageBucket: ``,
-      messagingSenderId: `574202965552`,
-      appId: `1:574202965552:web:649cda1839d3d13fb0c7f5`,
-      measurementId: `G-QNZQ2WNHW2`
-    }
-    // Initialize Firebase
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  let firebaseConfig = {
+    apiKey: `AIzaSyBG8d8Be15vBv161owJAgJq3ifRoEPADzI`,
+    authDomain: `traintime-a76fc.firebaseapp.com`,
+    databaseURL: `https://traintime-a76fc.firebaseio.com`,
+    projectId: `traintime-a76fc`,
+    storageBucket: ``,
+    messagingSenderId: `574202965552`,
+    appId: `1:574202965552:web:649cda1839d3d13fb0c7f5`,
+    measurementId: `G-QNZQ2WNHW2`
+  }
+
+  // Initialize Firebase
     firebase.initializeApp(firebaseConfig)
-    firebase.analytics()
-  </script>
+</script>
+
+<script src="./assets/javascript/app.js"></script>
 </body>
 </html>
