@@ -25,4 +25,32 @@ document.getElementById(`submitBtn`).addEventListener(`click`, e => {
   document.getElementById(`dest`).value = ``
   document.getElementById(`firstTime`).value = ``
   document.getElementById(`freqMin`).value = ``
+
 })
+
+db
+  .collection(`trains`)
+  .onSnapshot(({ docs }) => {
+
+    document.getElementById(`trainInfo`).innerHTML = ``
+
+    // forEach loop to grab data from array and show on schedule table
+    docs.forEach(route => {
+      let { train, destination, frequency, firstArrival } = route.data()
+
+      // create table element for each submit event
+      let trainElem = document.createElement(`tr`)
+      trainElem.innerHTML = `
+      <tr>
+        <td id="trainName">${train}</td>
+        <td id="destination">${destination}</td>
+        <td id="frequency">${frequency}</td>
+        <td id="nextArrival"></td>
+        <td id="minutesAway"></td>
+      </tr>
+      `
+      // append new train data to table for each submit event
+      document.getElementById(`trainInfo`).append(trainElem)
+
+    })
+  })
