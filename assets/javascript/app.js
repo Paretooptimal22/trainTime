@@ -3,26 +3,27 @@ const db = firebase.firestore()
 
 db.collection(`trains`)
 
-// initial variables
-let train,
-  dest,
-  time,
-  freq
+// // initial variables
+// let train,
+//   dest,
+//   time,
+//   freq
 
 
 document.getElementById(`submitBtn`).addEventListener(`click`, e => {
+  
   e.preventDefault()
 
-  train = document.getElementById(`train`).textContent
-  dest = document.getElementById(`dest`).textContent
-  time = document.getElementById(`firstTime`).textContent
-  freq = document.getElementById(`freqMin`).textContent
+  let trainData = {
+    train: document.getElementById(`train`).value,
+    destination: document.getElementById(`dest`).value,
+    firstArrival: document.getElementById(`firstTime`).value,
+    frequency: document.getElementById(`freqMin`).value
+  }
+  db.collection(`trains`).add(trainData)
 
-  db.collection(`trains`).add({
-    train: train,
-    destination: dest,
-    firstArrival: time,
-    frequency: freq
-  })
-
+  document.getElementById(`train`).value = ``
+  document.getElementById(`dest`).value = ``
+  document.getElementById(`firstTime`).value = ``
+  document.getElementById(`freqMin`).value = ``
 })
